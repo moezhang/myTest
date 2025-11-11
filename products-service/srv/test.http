@@ -1,0 +1,14 @@
+POST http://localhost:8080/odata/v4/AdminService/Products
+Content-Type: application/json
+Authorization: Basic YXV0aGVudGljYXRlZDo=
+
+{
+    "ID": 2,
+    "title": "test",
+    "descr": "hello"
+}
+
+###Get
+Get http://localhost:8080/odata/v4/AdminService/Products
+Content-Type: application/json
+Authorization: Basic YXV0aGVudGljYXRlZDo=

@@ -1,0 +1,97 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Application",
+      "request": "launch",
+      "mainClass": "com.men.test.menservice.Application",
+      "projectName": "men-service"
+    },
+    {
+      "type": "java",
+      "name": "Run meng-cap-1",
+      "request": "launch",
+      "mainClass": "com.meng.company.mengservice.Application",
+      "projectName": "meng-cap",
+      "args": [
+        "--spring.profiles.active=default"
+      ],
+      "preLaunchTask": "PreLaunchTask for Run products-service-1",
+      "cwd": "${workspaceFolder}/meng-cap",
+      "envFile": "${workspaceFolder}/meng-cap/env/.env1",
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_java_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/meng-cap\\\",\\\"profileName\\\":\\\"default\\\"}\"}"
+      }
+    },
+    {
+      "name": "Run products-service-1",
+      "type": "java",
+      "request": "launch",
+      "args": [
+        "--spring.profiles.active=default"
+      ],
+      "mainClass": "com.sap.cap.productsservice.Application",
+      "projectName": "products-service",
+      "preLaunchTask": "PreLaunchTask for Run products-service-1",
+      "cwd": "${workspaceFolder}/products-service",
+      "envFile": "${workspaceFolder}/products-service/env/.env1",
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_java_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/products-service\\\",\\\"profileName\\\":\\\"default\\\"}\"}"
+      }
+    },
+    {
+      "name": "Start projectfiori",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/projectfiori",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/projectfiori\"}"
+      }
+    },
+    {
+      "name": "Start projectfiori Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/projectfiori",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/projectfiori\"}"
+      }
+    }
+  ]
+}
